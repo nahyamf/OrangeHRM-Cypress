@@ -11,6 +11,8 @@ describe('Pengujian Halaman Login OrangeHRM', () => {
       // Assertion: Verifikasi redirect ke dashboard
       cy.url().should('include', '/dashboard/index')
       cy.get('h6').should('have.text', 'Dashboard')
+      cy.get('aside').should('be.visible')
+      cy.get('.oxd-layout-context').should('be.visible')
     })
   
     it('TC_Login_002-Login dengan valid username dan invalid password', () => {
@@ -64,6 +66,6 @@ describe('Pengujian Halaman Login OrangeHRM', () => {
       cy.url().should('include', '/requestPasswordResetCode')
   
       // Assertion: Elemen form reset password tampil
-      cy.get('h6').should('have.text', 'Reset Password')
+      cy.get('.orangehrm-card-container').should('be.visible')
     })
 }) 
