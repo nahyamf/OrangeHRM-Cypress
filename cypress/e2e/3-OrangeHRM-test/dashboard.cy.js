@@ -1,6 +1,6 @@
 describe('Pengujian Halaman Dashboard OrangeHRM', () => {
     it('TC_Dashboard_001-Menampilkan komponen dashboard setelah login', () => {
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.visit('/auth/login')
     
         // Login
         cy.xpath('//input[@name="username"]').type('Admin')
@@ -26,7 +26,7 @@ describe('Pengujian Halaman Dashboard OrangeHRM', () => {
         cy.clearLocalStorage()
 
         // Akses langsung ke halaman dashboard
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index', {
+        cy.visit('/dashboard/index', {
             failOnStatusCode: false
         })
             

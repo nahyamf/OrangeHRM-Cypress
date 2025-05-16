@@ -1,6 +1,6 @@
 class LoginPage {
   visit() {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit('/auth/login')
   }
 
   enterUsername(username) {
@@ -20,20 +20,20 @@ class LoginPage {
   }
 
   getDashboard() {
-    return cy.get('.oxd-layout-context')
+    return cy.get('.oxd-layout-context').should('be.visible')
   }
 
   getErrorMessage() {
-    return cy.get('.oxd-alert-content-text')
+    return cy.get('.oxd-alert-content-text').should('have.text', 'Invalid credentials')
   }
 
   getRequiredMessage() {
-    return cy.get('.oxd-input-field-error-message')
+    return cy.get('.oxd-input-field-error-message').should('contain.text', 'Required')
   }
 
   getForgotPassword() {
-    return cy.get('.orangehrm-card-container')
+    return cy.get('.orangehrm-card-container').should('be.visible')
   }
 }
 
-export default LoginPage
+export default new LoginPage

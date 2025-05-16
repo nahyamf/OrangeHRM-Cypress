@@ -1,6 +1,6 @@
 describe('Pengujian Halaman Login OrangeHRM', () => {
     beforeEach(() => {
-      cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+      cy.visit('/auth/login')
     })
   
     it('TC_Login_001-Login dengan valid username dan password', () => {
